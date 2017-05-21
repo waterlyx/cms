@@ -1,0 +1,89 @@
+<extend name="Public:base" />
+<block name="main">
+	<div class="admin-content-body">
+		<div class="am-cf am-padding am-padding-bottom-0">
+			<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">更新邮件配置</strong> / <small>Message</small></div>
+		</div>
+		<hr>
+		<div class="am-g am-g-fixed">
+			<form class="am-form" action="{:U('Message/saveemail')}" method="post">
+				<fieldset>
+					<div class="am-form-group">
+						<label>是否允许发送“HTML代码”做为邮件的内容</label><br />&nbsp;&nbsp;&nbsp;&nbsp;
+						<label class="am-radio-inline">
+        					<input type="radio"  value="1" name="html" <if condition="$dataemail.html eq '1'">checked="checked"</if> data-am-ucheck> 允许
+      					</label>
+						<label class="am-radio-inline">
+				        	<input type="radio" value="0" name="html" <if condition="$dataemail.html eq '0'">checked="checked"</if> data-am-ucheck> 不允许
+				      	</label>
+					</div>
+					
+					<div class="am-form-group">
+						<label for="charset">编码类型</label>
+						<input type="text" id="charset" name="charset" value="{$dataemail.charset}">
+					</div>
+					
+					<div class="am-form-group">
+						<label>是否需要身份验证</label><br />&nbsp;&nbsp;&nbsp;&nbsp;
+						<label class="am-radio-inline">
+        					<input type="radio"  value="1" name="smtpauth" <if condition="$dataemail.smtpauth eq '1'">checked="checked"</if> data-am-ucheck> 需要
+      					</label>
+						<label class="am-radio-inline">
+				        	<input type="radio" value="0" name="smtpauth" <if condition="$dataemail.smtpauth eq '0'">checked="checked"</if> data-am-ucheck> 不需要
+				      	</label>
+					</div>
+					
+					<div class="am-form-group">
+						<label for="smtpsecure">加密方式</label>
+						<input type="text" id="smtpsecure" name="smtpsecure" value="{$dataemail.smtpsecure}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="from">发送方邮件地址</label>
+						<input type="text" id="from" name="from" value="{$dataemail.from}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="fromname">发送方名称</label>
+						<input type="text" id="fromname" name="fromname" value="{$dataemail.fromname}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="host">发送邮件的服务协议地址</label>
+						<input type="text" id="host" name="host" value="{$dataemail.host}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="username">发送方帐号</label>
+						<input type="text" id="username" name="username" value="{$dataemail.username}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="password">发送方帐号密码</label>
+						<input type="password" id="password" name="password" value="{$dataemail.password}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="port">发邮件端口号</label>
+						<input type="text" id="port" name="port" value="{$dataemail.port}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="address">收件人地址</label>
+						<input type="text" id="address" name="address" value="{$dataemail.address}">
+					</div>
+					
+					<div class="am-form-group">
+						<label for="subject">邮件标题</label>
+						<input type="text" id="subject" name="subject" value="{$dataemail.subject}">
+					</div>
+					
+					<input type="hidden" name="id" id="id" value="{$dataemail.id}" />
+					
+					<p><input type="submit" class="am-btn am-btn-default" value="提交"></input></p>
+				</fieldset>
+			</form>
+		</div>
+
+	</div>
+</block>

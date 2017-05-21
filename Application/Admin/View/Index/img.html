@@ -1,0 +1,64 @@
+<extend name="Public:base" />
+<block name="main">
+	<div class="admin-content-body">
+		<div class="am-cf am-padding am-padding-bottom-0">
+			<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">站点图片管理模块</strong> / <small>Image</small></div>
+		</div>
+		<hr>
+		<div class="am-g">
+			
+<div class="am-u-sm-12 am-u-md-9">
+				<div class="am-panel am-panel-default">
+					<div class="am-panel-bd">
+						<p class="am-text-default"><b>首页图片</b></p>
+						<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 am-thumbnails">
+							<foreach name="dataimg" item="img">
+								<li>
+									<img class="am-thumbnail" style="margin-bottom: 5px;" src="{$img.img_index}" />
+									<a href="{:U('Index/delImg')}?id={$img.id}" type="button" class="am-btn am-btn-danger am-btn-xs am-round am-center">删除</a>
+								</li>
+							</foreach>
+						</ul>
+						<form action="{:U('Index/imgIndex')}" enctype="multipart/form-data" method="post">
+							<div class="am-form-group am-form-file">
+								<button type="button" class="am-btn am-btn-primary am-btn-sm">
+											    <i class="am-icon-cloud-upload"></i> 上传首页图片</button>
+								<input id="doc-form-file2" type="file" name="img_index[]" multiple="multiple">
+							</div>
+							<div id="file-list2"></div>
+							<input type="submit" class="am-btn am-btn-primary am-btn-xs" value="保存"></input>
+						</form>
+					</div>
+				</div>
+
+			</div>
+			<div class="am-u-sm-12 am-u-md-3">
+				<div class="am-panel am-panel-default">
+					<div class="am-panel-bd">
+						<div class="am-g">
+							<div class="am-u-md-4">
+								<img class="am-img-circle am-img-thumbnail am-img-responsive" src="{$dataindex.img_title}" alt="站点图片" />
+							</div>
+							<div class="am-u-md-8">
+								<p>站点标题图片</p>
+								<form class="am-form" action="{:U('Index/imgTitle')}" method="post" enctype="multipart/form-data">
+									<div class="am-form-group">
+										<div class="am-form-group am-form-file">
+											<button type="button" class="am-btn am-btn-primary am-btn-sm">
+											    <i class="am-icon-cloud-upload"></i> 上传新的站点图标</button>
+											<input id="doc-form-file" type="file" name="img_title">
+										</div>
+										<div id="file-list"></div>
+										<input type="hidden" name="img_title" id="img_title" value="{$data.img_title}" />
+										<input type="hidden" name="id" id="id" value="{$dataindex.id}" />
+										<input type="submit" class="am-btn am-btn-primary am-btn-xs" value="保存"></input>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+		</div>
+	</div>
+</block>

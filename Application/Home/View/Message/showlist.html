@@ -1,0 +1,41 @@
+<extend name="Public/base" />
+<block name="title">客户留言</block>
+<block name="main">
+	<br />
+	<div class="am-g am-g-fixed">
+		<div class="am-u-sm-12">
+			<form class="am-form am-form-horizontal" action="{:U('Message/sendMail')}" method="post">
+				<div class="am-form-group">
+					<label for="message-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
+					<div class="am-u-sm-9">
+						<input type="text" id="message-name" placeholder="我们怎样称呼您" name="name">
+					</div>
+				</div>
+
+				<div class="am-form-group">
+					<label for="message-content" class="am-u-sm-3 am-form-label">内容 / Content</label>
+					<div class="am-u-sm-9">
+						<textarea class="" rows="6" id="message-content" placeholder="感谢您的留言" name="content" required="required"></textarea>
+					</div>
+				</div>
+
+				<div class="am-form-group">
+					<label for="message-email" class="am-u-sm-3 am-form-label">电子邮件 / Email</label>
+					<div class="am-u-sm-9">
+						<input type="email" id="message-email" placeholder="将为您提供更好的反馈" name="email">
+					</div>
+				</div>
+
+				<div class="am-form-group">
+					<div class="am-u-sm-9 am-u-sm-push-3">
+						<input type="submit" class="am-btn am-btn-primary" id="sendmeaasge" value="提交留言">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
+	</div>
+	<br />
+	<br />
+</block>

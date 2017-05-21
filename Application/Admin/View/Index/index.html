@@ -1,0 +1,54 @@
+<extend name="Public:base" />
+<block name="main">
+	<div class="admin-content-body">
+		<div class="am-cf am-padding am-padding-bottom-0">
+			<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">后台首页</strong> / <small>Home</small></div>
+			<div class="am-fr" style="width: 250px; height: 30px;">
+			<div class="am-alert am-alert-success am-btn-xs" data-am-alert>
+				<button type="button" class="am-close">&times;</button>
+				<p>上次登陆时间：{$datauser.logintime|date="Y-m-d H:i:s",###}</p>
+			</div>
+			</div>
+		</div>
+		<hr>
+		<div class="am-g">
+			<div class="am-u-sm-12 am-u-md-10">
+				<form class="am-form am-form-horizontal" action="{:U('Index/editIndex')}" method="post">
+					<div class="am-form-group">
+						<label for="user-name" class="am-u-sm-3 am-form-label">站点标题</label>
+						<div class="am-u-sm-9">
+							<input type="text" id="user-name" name="title" value="{$dataindex.title}">
+						</div>
+					</div>
+
+					<div class="am-form-group">
+						<label for="user-email" class="am-u-sm-3 am-form-label">尾部内容</label>
+						<div class="am-u-sm-9">
+							<input type="text" id="user-email" name="footer" value="{$dataindex.footer}">
+						</div>
+					</div>
+
+					<div class="am-form-group">
+						<label for="user-phone" class="am-u-sm-3 am-form-label">首页小标题</label>
+						<div class="am-u-sm-9">
+							<input type="text" id="user-phone" name="mintitle" value="{$dataindex.mintitle}">
+						</div>
+					</div>
+
+					<div class="am-form-group">
+						<label for="user-intro" class="am-u-sm-3 am-form-label">首页介绍</label>
+						<div class="am-u-sm-9">
+							<textarea class="" rows="8" id="user-intro" name="introduce">{$dataindex.introduce}</textarea>
+						</div>
+					</div>
+					<input type="hidden" name="id" id="id" value="{$dataindex.id}" />
+					<div class="am-form-group">
+						<div class="am-u-sm-9 am-u-sm-push-3">
+							<input type="submit" class="am-btn am-btn-primary" value="保存修改"></input>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</block>

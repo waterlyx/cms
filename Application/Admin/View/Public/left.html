@@ -1,0 +1,48 @@
+<div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
+	<div class="am-offcanvas-bar admin-offcanvas-bar">
+		<ul class="am-list admin-sidebar-list">
+			<li>
+				<a href="{:U('Index/index')}"><span class="am-icon-home"></span> 首页</a>
+			</li>
+			
+			<li>
+				<a href="{:U('Index/img')}"><span class="am-icon-image"></span> 站点图片管理模块</a>
+			</li>
+
+			<li class="admin-parent">
+				<a class="am-cf" data-am-collapse="{target: '#collapse-company'}"><span class="am-icon-file"></span> 公司概况模块 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-company">
+					<li>
+						<a href="{:U('About/showlist')}" class="am-cf"><span class="am-icon-suitcase"></span> 企业简介</a>
+					</li>
+					<li>
+						<a href="{:U('Culture/showlist')}"><span class="am-icon-trophy"></span> 企业文化</a>
+					</li>
+				</ul>
+			</li>
+
+			<li>
+				<a href="{:U('Module/showlist')}"><span class="am-icon-file"></span> 扩展模块管理</a>
+			</li>
+
+			<li class="admin-parent">
+				<a class="am-cf" data-am-collapse="{target: '#collapse-extension'}"><span class="am-icon-file"></span> 扩展模块 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+				<ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-extension">
+					<foreach name="datamodule" item="vo">
+					<li>
+						<a href="{:U('News/showlist')}?module={$vo.id}"><span class="am-icon-puzzle-piece"></span> {$vo.namezh}模块</a>
+					</li>
+					</foreach>
+				</ul>
+			</li>
+
+			<li>
+				<a href="{:U('Message/install')}"><span class="am-icon-file"></span> 客户留言模块</a>
+			</li>
+
+			<li>
+				<a href="{:U('User/logoff')}"><span class="am-icon-sign-out"></span> 注销</a>
+			</li>
+		</ul>
+	</div>
+</div>

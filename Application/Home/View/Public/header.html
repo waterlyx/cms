@@ -1,0 +1,27 @@
+<header class="am-topbar am-topbar-fixed-top">
+    <div class="am-container">
+        <h1 class="am-topbar-brand">
+            <img src="{$data.img_title}" style="width: 35px; height: 35px; margin-top: -5px;"/>
+        </h1>
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+                data-am-collapse="{target: '#collapse-head'}">
+            <span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span>
+        </button>
+        <div class="am-collapse am-topbar-collapse" id="collapse-head">
+            <ul class="am-nav am-nav-pills am-topbar-nav">
+                <li <if condition="$Think.const.CONTROLLER_NAME eq 'Index'">class="am-active"</if>><a href="{:U('Index/index')}">首页</a></li>
+                <li class="am-dropdown" data-am-dropdown>
+                    <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">公司概况 <span class="am-icon-caret-down"></span></a>
+                    <ul class="am-dropdown-content">
+                        <li <if condition="$Think.const.CONTROLLER_NAME eq 'About'">class="am-active"</if>><a href="{:U('About/showlist')}">企业简介</a></li>
+                        <li <if condition="$Think.const.CONTROLLER_NAME eq 'Culture'">class="am-active"</if>><a href="{:U('Culture/showlist')}">企业文化</a></li>
+                    </ul>
+                </li>
+                <foreach name="dataheadermodule" item="vo">
+                <li <php>if($vo['id'] == $_GET['mid']) echo 'class="am-active"';</php>><a href="{:U('News/showlist')}?mid={$vo.id}">{$vo.namezh}</a></li>
+                </foreach>
+                <li <if condition="$Think.const.CONTROLLER_NAME eq 'Message'">class="am-active"</if>><a href="{:U('Message/showlist')}">客户留言</a></li>
+            </ul>
+        </div>
+    </div>
+</header>

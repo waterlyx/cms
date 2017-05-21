@@ -1,0 +1,16 @@
+<extend name="Public/base" />
+<block name="title">{$datacontent.title}</block>
+<block name="main">
+	<br />
+	<div class="am-g am-g-fixed">
+		<div class="am-u-sm-12">
+			<h1>{$datacontent.title}</h1>
+			<b>{$datamodule.namezh}</b><span style="color: #909090;"> | {$datacontent.time|date="Y-m-d H:i",###}</span>
+			<span style="color: #CCCCCC;">阅读:</span><span class="am-text-danger am-text-xl">{$datacontent.hits}</span>
+			<hr />
+			<p>{$datacontent.content|htmlspecialchars_decode}</p>
+		</div>
+	</div>
+	<br />
+	<br />
+</block>

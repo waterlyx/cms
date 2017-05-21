@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title><block name="title"></block> | {$data.title}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="alternate icon" type="image/png" href="{$data.img_title}">
+    <css href="__PUBLIC__/AmazeUI/css/amazeui.min.css"/>
+    <style>
+    html{
+    	height:100%;
+    }
+    .footer p {
+        color: #7f8c8d;
+        margin: 0;
+        padding: 15px 0;
+        text-align: center;
+        background: #2d3e50;
+     }
+     .footer{
+     	position: absolute;  
+     	bottom: 0px;
+     	width:100%;
+     }
+    <block name="style"></block>
+    </style>
+</head>
+
+<body>
+<include file="Public/header" />
+<block name="main"></block>
+<include file="Public/footer" />
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/AmazeUI/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<js href="__PUBLIC__/AmazeUI/js/jquery.min.js"/>
+<!--<![endif]-->
+<js href="__PUBLIC__/AmazeUI/js/amazeui.min.js"/>
+</body>
+<block name="script"></block>
+</html>

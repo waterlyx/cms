@@ -1,0 +1,32 @@
+<extend name="Public:base" />
+<block name="head">
+<js href="__PUBLIC__/editor/kindeditor-min.js" />
+<js href="__PUBLIC__/editor/lang/zh_CN.js" />
+<script type="text/javascript">
+//加入在线编辑器
+var editor;
+KindEditor.ready(function(K) {
+	editor = K.create('textarea[name="content"]', {
+	      allowFileManager : true
+	});
+});
+</script>
+</block>
+<block name="main">
+<div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">企业简介</strong> / <small>Company Profile</small></div>
+      </div>
+      <hr>
+      <div class="am-g">
+        <div class="am-u-sm-12">
+        	<form action="{:U('About/edit')}" method="post">
+        		<textarea style="width:100%;height:600px" name="content">{$data.content}</textarea>
+				<input type="hidden" value="{$data.id}" name="id" />
+				<br />
+				<input type="submit" class="am-btn am-btn-primary am-btn-block" value="提交"></input>
+        	</form>
+        </div>
+      </div>
+    </div>
+</block>

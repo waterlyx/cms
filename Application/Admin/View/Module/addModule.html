@@ -1,0 +1,35 @@
+<extend name="Public:base" />
+<block name="main">
+<div class="admin-content-body">
+	<div class="am-cf am-padding am-padding-bottom-0">
+		<div class="am-fl am-cf">
+			<strong class="am-text-primary am-text-lg">新增扩展模块</strong> / <small>Add Module</small>
+		</div>
+	</div>
+	<hr>
+<div class="am-g">
+			<div class="am-u-sm-12">
+				<form action="{:U('Module/addModule')}" method="post" class="am-form">
+					<div class="am-form-group">
+						<label for="title">中文名称</label> <input type="text" class="" id="title" name="nameZh">
+					</div>
+					<div class="am-form-group">
+						<label for="title">英文名称</label> <input type="text" class="" id="title" name="nameEn">
+					</div>
+					<div class="am-form-group">
+						<label>显示状态</label> &nbsp;&nbsp; <label class="am-radio-inline"><input type="radio" name="show" value="1" data-am-ucheck checked> 显示</label> <label class="am-radio-inline"><input type="radio" name="show" value="0" data-am-ucheck> 隐藏</label>
+					</div>
+					<div class="am-form-group">
+						<label>首页显示</label> &nbsp;&nbsp; <label class="am-radio-inline"><input type="radio" name="index" value="1" data-am-ucheck> 是</label> <label  class="am-radio-inline"><input type="radio" name="index" value="0" checked="checked" data-am-ucheck> 否</label>
+					</div>
+					<div class="am-form-group">
+						<label class="am-text-warning">注意：首页显示数量最多2个</label>
+					</div>
+					<input type="submit" class="am-btn am-btn-primary am-btn-block" value="提交"></input>
+				</form>
+			</div>
+
+		</div>
+	
+</div>
+</block>

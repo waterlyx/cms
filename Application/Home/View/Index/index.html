@@ -1,0 +1,97 @@
+<extend name="Public/base" />
+<block name="title">首页</block>
+<block name="style">
+	.detail { background: #fff; } 
+	.detail-h2 { text-align: center; font-size: 150%; margin: 40px 0; } 
+	.detail-h3 { color: #1f8dd6; } 
+	.detail-p { color: #7f8c8d; } 
+	.detail-mb { margin-bottom: 30px; } 
+	.hope { background: #99cc99; padding: 50px 0; } 
+	.hope-img { text-align: center; } 
+	.hope-hr { border-color: #149C88; } 
+	.hope-title { font-size: 140%; } 
+	.about { background: #fff; padding: 40px 0; color: #7f8c8d; } 
+	.about-color { color: #34495e; } 
+	.about-title { font-size: 180%; padding: 30px 0 50px 0; text-align: center; }
+</block>
+<block name="main">
+	<div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}'>
+		<ul class="am-slides">
+			<foreach name="dataimg" item="img">
+				<li>
+					<img src="{$img.img_index}">
+				</li>
+			</foreach>
+		</ul>
+	</div>
+	<div class="detail">
+		<div class="am-g am-container">
+			<div class="am-u-lg-12">
+				<div class="am-g">
+					<div class="am-u-lg-6 am-u-md-6 am-u-sm-12">
+						<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+							<!--列表标题-->
+							<div class="am-list-news-hd am-cf">
+								<!--带更多链接-->
+								<a href="{:U('News/showlist')}?mid={$datamodule[0].id}" class="">
+									<h2>{$datamodule[0].namezh}</h2> <span class="am-list-news-more am-fr">更多
+                                &raquo;</span>
+								</a>
+							</div>
+							<div class="am-list-news-bd">
+								<ul class="am-list">
+									<foreach name="datanews[0]" item="vo">
+									<li class="am-g am-list-item-dated">
+										<img style="height: 40px;float: left;margin-top: 3px;" src="{$vo.img}" alt="暂无图片">
+										<a href="{:U('News/details')}?did={$vo.id}&mid={$datamodule[0].id}" class="am-list-item-hd">&nbsp;{$vo.title}</a>
+										<span class="am-list-date">{$vo.time|date="Y-m-d",###}</span>
+									</li>
+									</foreach>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="am-u-lg-6 am-u-md-6 am-u-sm-12">
+						<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+							<!--列表标题-->
+							<div class="am-list-news-hd am-cf">
+								<!--带更多链接-->
+								<a href="{:U('News/showlist')}?mid={$datamodule[1].id}" class="">
+									<h2>{$datamodule[1].namezh}</h2> <span class="am-list-news-more am-fr">更多
+                                &raquo;</span>
+								</a>
+							</div>
+							<div class="am-list-news-bd">
+								<ul class="am-list">
+									<foreach name="datanews[1]" item="vo">
+									<li class="am-g am-list-item-dated">
+										<img style="height: 40px;float: left;margin-top: 3px;" src="{$vo.img}" alt="暂无图片">
+										<a href="{:U('News/details')}?did={$vo.id}&mid={$datamodule[1].id}" class="am-list-item-hd">&nbsp;{$vo.title}</a>
+										<span class="am-list-date">{$vo.time|date="Y-m-d",###}</span>
+									</li>
+									</foreach>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="hope">
+		<div class="am-g am-container">
+			<div class="am-u-lg-4 am-u-md-6 am-u-sm-12 hope-img">
+				<img src="__PUBLIC__/AmazeUI/i/examples/landing.png" alt="" data-am-scrollspy="{animation:'slide-left', repeat: false}" class="am-img-responsive">
+				<hr class="am-article-divider am-show-sm-only hope-hr">
+			</div>
+			<div class="am-u-lg-8 am-u-md-6 am-u-sm-12">
+				<h2 class="hope-title">{$data.mintitle}</h2>
+				<p>
+					{$data.introduce}
+				</p>
+			</div>
+		</div>
+	</div>
+</block>

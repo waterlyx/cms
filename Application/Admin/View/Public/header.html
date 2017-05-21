@@ -1,0 +1,16 @@
+<header class="am-topbar am-topbar-inverse admin-header">
+  <div class="am-topbar-brand">
+    <strong>{$dataindex.title}</strong> <small>后台管理</small>
+  </div>
+
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li><a target="_blank"  href="/"><span class="am-icon-internet-explorer"></span> 查看网站</a></li>
+      <li><a href="{:U('Index/delcache')}"><span class="am-icon-trash" style="color: yellow;"></span> 清除缓存<small>（默认1分钟）</small></a></li>
+      <li><a  href="{:U('User/logoff')}"><span class="am-icon-sign-out"></span> 注销</a></li>
+    </ul>
+  </div>
+</header>

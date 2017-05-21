@@ -1,0 +1,50 @@
+<extend name="Public:base" />
+<block name="head">
+	<js href="__PUBLIC__/editor/kindeditor-min.js" />
+	<js href="__PUBLIC__/editor/lang/zh_CN.js" />
+	<script type="text/javascript">
+		//加入在线编辑器
+		var editor;
+		KindEditor.ready(function(K) {
+			editor = K.create('textarea[name="content"]', {
+				allowFileManager: true
+			});
+		});
+	</script>
+</block>
+<block name="main">
+	<div class="admin-content-body">
+		<div class="am-cf am-padding am-padding-bottom-0">
+			<div class="am-fl am-cf">
+				<strong class="am-text-primary am-text-lg">{$name.namezh}</strong> / <small>{$name.nameen}</small>
+			</div>
+		</div>
+		<hr>
+		<div class="am-g">
+			<div class="am-u-sm-12">
+				<form action="{:U('News/add')}" method="post" class="am-form" enctype="multipart/form-data">
+					<div class="am-form-group">
+						<label for="title">标题</label> <input type="text" class="" id="title" name="title">
+					</div>
+					<div class="am-form-group am-form-file">
+						<button type="button" class="am-btn am-btn-danger am-btn-sm">
+    					<i class="am-icon-cloud-upload"></i> 上传缩略图(必传)</button>
+						<input id="doc-form-file" type="file" name="thumbnail">
+					</div>
+					<div id="file-list"></div>
+					<textarea style="width: 100%; height: 400px" name="content"></textarea>
+					<br />
+					<div class="am-form-group">
+						<label>状态:</label> &nbsp;&nbsp; <label class="am-radio-inline"><input type="radio" name="show" value="1" data-am-ucheck checked> 显示</label> <label class="am-radio-inline"><input type="radio" name="show" value="0" data-am-ucheck> 隐藏</label>
+					</div>
+					<div class="am-form-group">
+						<label>置顶:</label> &nbsp;&nbsp; <label class="am-radio-inline"><input type="radio" name="top" value="1" data-am-ucheck> 是</label> <label  class="am-radio-inline"><input type="radio" name="top" value="0" checked="checked" data-am-ucheck> 否</label>
+					</div>
+					<input type="hidden" name="module" id="module" value="{$name.id}" />
+					<input type="submit" class="am-btn am-btn-primary am-btn-block" value="提交"></input>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</block>

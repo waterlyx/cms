@@ -1,0 +1,32 @@
+<extend name="Public/base" />
+<block name="title">{$datamodule.namezh}</block>
+<block name="main">
+	<div class="am-g am-g-fixed">
+		<div class="am-u-sm-12">
+			<table class="am-table">
+			<br />
+			<tbody>
+				<foreach name="datalist" item="vo">
+				<tr>
+					<td width="150" class="am-show-md-up">
+						<a href="{:U('News/details')}?did={$vo.id}&mid={$Think.get.mid}"><img src="{$vo.img}" style="width: 160px;height: 90px;" alt="暂无图片" /></a>
+					</td>
+					<td>
+						<if condition="$vo.top eq 1"><a class="am-badge am-badge-warning am-round">置顶</a></if>
+						<a href="{:U('News/details')}?did={$vo.id}&mid={$Think.get.mid}">{$vo.title}</a>
+					</td>
+					<td>
+						<p class="am-text-right">{$vo.time|date="Y-m-d H:i",###}<br /><span class="am-icon-eye"> {$vo.hits}</span></p>
+					</td>
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="am-fr">	
+			{$page}
+		</div>
+		</div>
+	</div>
+	<br />
+	<br />
+</block>
